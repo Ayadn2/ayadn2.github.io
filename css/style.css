@@ -404,6 +404,80 @@ ul {
   background: transparent;
 }
 
+/* Werdegang: zwei Spalten mit Zeitleisten */
+.career {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.career__heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  margin-bottom: 1.25rem;
+}
+
+.career__col .tags {
+  margin-top: -0.25rem;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  border-left: 2px solid var(--color-border);
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 1.5rem 1.5rem;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* Punkt auf der Linie */
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.35rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-accent);
+}
+
+.timeline__item:first-child::before {
+  background: var(--color-accent);
+}
+
+.timeline__date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.timeline__title {
+  font-size: 1.05rem;
+  margin: 0.15rem 0 0.1rem;
+}
+
+.timeline__place {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.timeline__place + p {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+}
+
 .contact__intro {
   color: var(--color-muted);
   margin-bottom: 1.5rem;
@@ -426,8 +500,13 @@ ul {
 
 /* Tablet */
 @media (max-width: 900px) {
-  .about {
+  .about,
+  .career {
     grid-template-columns: 1fr;
+  }
+
+  .career {
+    gap: 1rem;
   }
 
   .facts {
