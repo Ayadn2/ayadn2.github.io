@@ -77,6 +77,10 @@ function initActiveLinks() {
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
 
+  // Auch den Startbereich beobachten: dort ist kein Menüpunkt aktiv
+  const hero = document.getElementById('top');
+  if (hero) sections.push(hero);
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
