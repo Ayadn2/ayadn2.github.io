@@ -22,6 +22,7 @@ npx http-serve
 
 ## Roadmap
 - [x] Grundgerüst, responsive Navigation, Theme-Toggle
+- [x] Persönliche Inhalte und Werdegang als Zeitleiste
 - [ ] Projekte dynamisch über die GitHub-API laden (mit Caching)
 - [ ] Skill-Diagramm (Chart.js)
 - [ ] Kontaktformular mit Validierung
