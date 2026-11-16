@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nivethan Ayadurai – Portfolio</title>
+  <meta name="description" content="Portfolio von Nivethan Ayadurai: Projekte, Skills und Kontakt.">
+  <!-- Theme vor dem ersten Rendern setzen, damit die Seite nicht kurz "aufblitzt" -->
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    } catch (e) { /* localStorage nicht verfügbar */ }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Hauptnavigation">
+      <a class="nav__logo" href="#top">N<span>A</span></a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menü öffnen">
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a class="nav__link" href="#about">Über mich</a></li>
+        <li><a class="nav__link" href="#skills">Skills</a></li>
+        <li><a class="nav__link" href="#projects">Projekte</a></li>
+        <li><a class="nav__link" href="#contact">Kontakt</a></li>
+        <li>
+          <button class="theme-toggle" type="button" aria-label="Dunkles Theme aktivieren">
+            <span class="theme-toggle__icon" aria-hidden="true"></span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero container" id="top">
+      <p class="hero__eyebrow">Hallo, ich bin</p>
+      <h1 class="hero__title">Nivethan Ayadurai</h1>
+      <!-- TODO: Studiengang anpassen -->
+      <p class="hero__subtitle">Student an der Berner Fachhochschule mit Fokus auf Web Engineering und Softwareentwicklung.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">Projekte ansehen</a>
+        <a class="btn btn--ghost" href="#contact">Kontakt aufnehmen</a>
+      </div>
+    </section>
+
+    <!-- ÜBER MICH -->
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <h2 class="section__title" id="about-title">Über mich</h2>
+      <div class="about">
+        <div class="about__text">
+          <!-- TODO: eigenen Text schreiben -->
+          <p>Ich studiere an der BFH und interessiere mich besonders dafür, wie gute Weberlebnisse entstehen: von sauberem HTML über durchdachtes Design bis zu Anwendungen, die Daten aus APIs laden.</p>
+          <p>Auf dieser Seite sammle ich meine Projekte und zeige, mit welchen Technologien ich arbeite.</p>
+        </div>
+        <ul class="facts" aria-label="Kurzinfos">
+          <li class="facts__item"><span class="facts__label">Studium</span><span class="facts__value">BFH, Bern</span></li>
+          <li class="facts__item"><span class="facts__label">Fokus</span><span class="facts__value">Web &amp; Software</span></li>
+          <li class="facts__item"><span class="facts__label">Sprachen</span><span class="facts__value">Deutsch, Englisch</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section container" id="skills" aria-labelledby="skills-title">
+      <h2 class="section__title" id="skills-title">Skills</h2>
+      <!-- TODO: an eigene Skills anpassen. Etappe 3: Chart aus GitHub-Daten -->
+      <div class="skills">
+        <article class="card">
+          <h3 class="card__title">Frontend</h3>
+          <ul class="tags">
+            <li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li><li class="tag">Responsive Design</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 class="card__title">Backend &amp; Daten</h3>
+          <ul class="tags">
+            <li class="tag">REST APIs</li><li class="tag">Java</li><li class="tag">SQL</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 class="card__title">Tools</h3>
+          <ul class="tags">
+            <li class="tag">Git &amp; GitHub</li><li class="tag">VS Code</li><li class="tag">Figma</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJEKTE -->
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <h2 class="section__title" id="projects-title">Projekte</h2>
+      <!-- Etappe 2: Diese Liste wird per GitHub-API dynamisch befüllt -->
+      <div class="projects" id="project-list">
+        <article class="card project">
+          <h3 class="card__title">Portfolio-Webseite</h3>
+          <p>Diese Seite: responsiv, mit hellem und dunklem Theme, gebaut mit HTML, CSS und JavaScript.</p>
+          <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JS</li></ul>
+        </article>
+        <article class="card project project--placeholder">
+          <h3 class="card__title">Weitere Projekte folgen</h3>
+          <p>Hier erscheinen bald meine öffentlichen GitHub-Repositories.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="section container" id="contact" aria-labelledby="contact-title">
+      <h2 class="section__title" id="contact-title">Kontakt</h2>
+      <p class="contact__intro">Lust auf einen Austausch? Ich freue mich über deine Nachricht.</p>
+      <!-- Etappe 3: Kontaktformular mit Validierung -->
+      <div class="hero__actions">
+        <!-- TODO: GitHub-Benutzername eintragen -->
+        <a class="btn btn--primary" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Nivethan Ayadurai</p>
+    </div>
+  </footer>
+</body>
+</html>
