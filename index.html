@@ -15,6 +15,7 @@
   </script>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
+  <script src="js/projects.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -184,17 +185,9 @@
     <!-- PROJEKTE -->
     <section class="section container" id="projects" aria-labelledby="projects-title">
       <h2 class="section__title" id="projects-title">Projekte</h2>
-      <!-- Etappe 2: Diese Liste wird per GitHub-API dynamisch befüllt -->
-      <div class="projects" id="project-list">
-        <article class="card project">
-          <h3 class="card__title">Portfolio-Webseite</h3>
-          <p>Diese Seite: responsiv, mit hellem und dunklem Theme, gebaut mit HTML, CSS und JavaScript.</p>
-          <ul class="tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JS</li></ul>
-        </article>
-        <article class="card project project--placeholder">
-          <h3 class="card__title">Weitere Projekte folgen</h3>
-          <p>Hier erscheinen bald meine öffentlichen GitHub-Repositories.</p>
-        </article>
+      <p class="section__intro">Meine öffentlichen Repositories, live geladen über die GitHub-API.</p>
+      <div class="projects" id="project-list" aria-live="polite" aria-busy="true">
+        <!-- Wird von js/projects.js befüllt -->
       </div>
     </section>
 
